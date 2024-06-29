@@ -6,7 +6,7 @@ void    error()
         write(1, "\n", 1);
 }
 
-void    ft_free(char **arg) //dinamik tahsis edilmiş iki boyutlu bir char tek tek freelemelisin
+void    ft_argfree(char **arg) //dinamik tahsis edilmiş iki boyutlu bir char tek tek freelemelisin
 {
     int i;
 
@@ -16,7 +16,7 @@ void    ft_free(char **arg) //dinamik tahsis edilmiş iki boyutlu bir char tek t
     while(i >= 0)
         free(arg[i--]);
 }
-static int  repeat(int tmp, char **arg, int i)
+static int  repeat(long tmp, char **arg, int i)
 {
     i++;
     while(arg[i])
@@ -55,5 +55,5 @@ void    check_arg(int argc, int **argv)
         i++;
     }
     if(argc == 2)
-        ft_free(arg);       //splitte malloc kullandın
+        ft_argfree(arg);       //splitte malloc kullandın
 }
